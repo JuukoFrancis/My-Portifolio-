@@ -40,7 +40,12 @@ const SKillsSection = () => {
               className="bg-card p-6 rounded-lg shadow-xs card-hover"
             >
               <div className="text-left mb-4">
-                <h3 className="font-semibold text-lg"> {skill.name}</h3>
+                <h3 className="font-semibold text-lg">
+                  {
+                    <skill.icon className="h-4 w-4 md:h-6 md:w-6 text-primary inline-block mr-3" />
+                  }
+                  {skill.name}
+                </h3>
               </div>
               <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
                 <div
