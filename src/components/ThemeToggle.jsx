@@ -1,17 +1,17 @@
 import { Moon, Sun } from "lucide-react";
-import React, { useEffect, useState } from "react";
-import { cn } from "../lib/utils";
+import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
+
 const ThemeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
-
-    if (storedTheme == "dark") {
-      document.documentElement.classList.add("dark");
+    if (storedTheme === "dark") {
       setIsDarkMode(true);
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
       setIsDarkMode(false);
     }
   }, []);
@@ -19,8 +19,7 @@ const ThemeToggle = () => {
   const toggleTheme = () => {
     if (isDarkMode) {
       document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light"); //persist theme even on hard reload
-
+      localStorage.setItem("theme", "light");
       setIsDarkMode(false);
     } else {
       document.documentElement.classList.add("dark");
@@ -33,7 +32,7 @@ const ThemeToggle = () => {
     <button
       onClick={toggleTheme}
       className={cn(
-        "fixed  top-5 md:right-5  right-20 z-50 p-2 rounded-full transition-colors duration-300",
+        "fixed max-sm top-5 md:right-5 right-20 z-100 py-5 rounded-full transition-colors duration-300",
         "focus:outline-hidden"
       )}
     >
@@ -45,5 +44,4 @@ const ThemeToggle = () => {
     </button>
   );
 };
-
 export default ThemeToggle;
