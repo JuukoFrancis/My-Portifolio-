@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* REQUIRED for Tailwind v4 dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-border: hsl(var(--border));
   --color-background: hsl(var(--background));
