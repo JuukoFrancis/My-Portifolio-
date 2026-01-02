@@ -1,4 +1,16 @@
-import { Code, User, Briefcase, Server } from "lucide-react";
+import {
+  Code,
+  User,
+  Briefcase,
+  Server,
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Twitch,
+} from "lucide-react";
 import { DiVisualstudio } from "react-icons/di";
 import {
   SiReact,
@@ -44,30 +56,6 @@ export const AboutSkills = [
       "Building secure, scalable APIs and databases that power reliable, high-performance applications.",
   },
 ];
-
-// export const clientReviews = [
-//   {
-//     clientName: "Sibalaba Francis",
-//     title: "C.E.O Bawologoma Electro Centre",
-//     clientText:
-//       "Francis is a very talented developer . He is able to work with a variet of technoligies. He is good at working with team and taking up leadership skills when needed",
-//     rating: 4,
-//   },
-//   {
-//     clientName: "Mwase Afiizu",
-//     title: "Manager Namu Restaurant",
-//     clientText: "T.",
-//     rating: 5,
-//   },
-
-//   {
-//     clientName: "Namu Whitney",
-//     title: "C.E.O Namu Pizza Hub",
-//     clientText:
-//       "I’m impressed with their attention to detail. They delivered exactly what I needed on time and within budget.",
-//     rating: 4,
-//   },
-// ];
 
 export const clientReviews = [
   {
@@ -131,6 +119,7 @@ export const skills = [
   { name: "Figma", icon: SiFigma, level: 80, category: "tools" },
   { name: "VS Code", icon: DiVisualstudio, level: 95, category: "tools" },
 ];
+
 export const projects = [
   {
     id: 1,
@@ -164,6 +153,30 @@ export const projects = [
   },
 ];
 
+export const Address = [
+  {
+    title: "Email",
+    detail: "juukojuniorfrancis@gmail.com",
+    icon: Mail,
+  },
+  {
+    title: "Phone",
+    detail: "+256-756-974-222  ",
+    icon: Phone,
+  },
+  {
+    title: "Location",
+    detail: "Kampala, Uganda",
+    icon: MapPin,
+  },
+];
+
+export const contactIcons = [
+  { icon: Linkedin },
+  { icon: Twitter },
+  { icon: Instagram },
+  { icon: Twitch },
+];
 // export const skills = [
 //   // Frontend
 //   { name: "HTML/CSS", level: 95, category: "frontend" },
