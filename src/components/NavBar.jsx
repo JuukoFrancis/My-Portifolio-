@@ -1,6 +1,9 @@
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import ThemeToggle from "./ThemeToggle";
+import { ImCross } from "react-icons/im";
+import { NavLink } from "react-router";
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -16,18 +19,35 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      if (!isMenuOpen) {
+        setIsScrolled(window.scrollY > 10);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+    } else {
+      document.body.style.position = "";
+      document.body.style.width = "";
+    }
+
+    return () => {
+      document.body.style.position = "";
+      document.body.style.width = "";
+    };
+  }, [isMenuOpen]);
 
   return (
     <nav
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300",
-        isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-sm" : "py-5"
+        " top-0 w-full z-50 transition-all duration-300 fixed",
+        isScrolled ? "py-3 bg-background  shadow-sm" : "py-5"
       )}
     >
       <div className="container flex items-center justify-between">
@@ -49,21 +69,34 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="md:hidden z-50 p-2"
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {!isMenuOpen && (
+          <button
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="md:hidden z-50 p-2"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {<Menu size={24} />}
+          </button>
+        )}
       </div>
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-background/95 backdrop-blur-md flex items-center justify-center md:hidden">
+        <div
+          className={cn(
+            "fixed inset-0  w-3/4  ml-auto z-50 bg-background/80 backdrop-blur-md flex items-center justify-center md:hidden"
+          )}
+        >
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="absolute top-3 right-5 p-2 text-foreground"
+            aria-label="Close menu"
+          >
+            <X size={28} />
+          </button>
+
           <div className="flex flex-col space-y-8 text-xl">
-            {navItems.map((item) => (
+            {navItems.map((item, index) => (
               <a
                 key={item.name}
                 href={item.href}
