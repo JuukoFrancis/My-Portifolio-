@@ -4,10 +4,10 @@ import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="py-12 px-4 bg-card relative border-t border-border mt-12 pt-8 flex flex-wrap justify-between items-center">
-      <p className="text-sm text-muted-foreground">
-        &copy; {`${new Date(Date.now()).getFullYear()}`} Juuko Francis.dev All
-        rights reserved.
+    <footer className="py-6 px-4 bg-card relative border-t border-border mt-12 pt-4 flex flex-wrap justify-between items-center ">
+      <p className="text-sm text-muted-foreground m-auto">
+        Copyright {`${new Date(Date.now()).getFullYear()}`} &copy; Juuko
+        Francis.dev All rights reserved.
       </p>
       <a
         href="#hero"
