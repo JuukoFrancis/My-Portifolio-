@@ -45,12 +45,12 @@ const AboutMe = () => {
             <div className="space-y-6">
               <div>
                 {" "}
-                {/* <img
-            src={testimonial.image}
-            alt={testimonial.alt}
-            className="w-20 h-20 rounded-full mx-auto mb-4"
-          /> */}
-                <IoPersonSharp className="inline-block w-50 h-40 text-primary" />
+                <img
+                  src={"/resized_image.png"}
+                  alt={""}
+                  className="md:w-65 md:h-65 w-45 h-45 mx-auto mb-4"
+                />
+                {/* <IoPersonSharp className="inline-block w-50 h-40 text-primary" /> */}
               </div>
               <h3 className="text-2xl font-semibold">
                 Passionate Full Stack Developer (Backend-Focused)

@@ -4,13 +4,14 @@ import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
 import { ToastContainer } from "react-toastify";
-
+import { useTheme } from "./context/ThemeContext";
 // 18.00
 
 const App = () => {
+  const { isDarkMode } = useTheme();
   return (
     <>
-      <ToastContainer />
+      <ToastContainer theme={isDarkMode ? "dark" : "light"} />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>

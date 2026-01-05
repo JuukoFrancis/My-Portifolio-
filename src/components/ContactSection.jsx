@@ -11,10 +11,42 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import { Address } from "../assets/assets";
+import { Address, contactIcons } from "../assets/assets";
+import { toast } from "react-toastify";
+
+const key = import.meta.env.VITE_EMAIL_KEY;
 
 export const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  // console.log(key);
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", key);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("");
+      //   alert('Form Submitted Successfully');
+      toast.success("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      //   alert(data.message);
+      toast.error(data.message);
+      setResult("");
+    }
+  };
 
   //   const handleSubmit = (e) => {
   //     e.preventDefault();
@@ -67,18 +99,11 @@ export const ContactSection = () => {
             <div className="pt-8">
               <h4 className="font-medium mb-4"> Connect With Me</h4>
               <div className="flex space-x-4 justify-center">
-                <a href="#" target="_blank">
-                  <Linkedin />
-                </a>
-                <a href="#" target="_blank">
-                  <Twitter />
-                </a>
-                <a href="#" target="_blank">
-                  <Instagram />
-                </a>
-                <a href="#" target="_blank">
-                  <Twitch />
-                </a>
+                {contactIcons.map((icon, key) => (
+                  <a href="#" target="_blank" key={key}>
+                    {<icon.icon />}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
@@ -89,13 +114,12 @@ export const ContactSection = () => {
           >
             <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
 
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={onSubmit}>
               <div>
                 <label
                   htmlFor="name"
                   className="block text-sm font-medium mb-2"
                 >
-                  {" "}
                   Your Name
                 </label>
                 <input
@@ -105,6 +129,24 @@ export const ContactSection = () => {
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
                   placeholder="Juuko Francis..."
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="Phone number"
+                  className="block text-sm font-medium mb-2"
+                >
+                  Your Name
+                </label>
+                <input
+                  type="number"
+                  id="name"
+                  name="phone"
+                  placeholder="Your phone number"
+                  pattern="^(077|076|078|079|074|070|075)[0-9]{7}$"
+                  title="Enter a valid 10-digit number starting with 077, 076, 078, 079, 074, 070, 03 ,02 ,or 075"
+                  required
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
                 />
               </div>
 
@@ -121,7 +163,7 @@ export const ContactSection = () => {
                   name="email"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="john@gmail.com"
+                  placeholder="Francis@gmail.com"
                 />
               </div>
 
@@ -130,7 +172,6 @@ export const ContactSection = () => {
                   htmlFor="message"
                   className="block text-sm font-medium mb-2"
                 >
-                  {" "}
                   Your Message
                 </label>
                 <textarea

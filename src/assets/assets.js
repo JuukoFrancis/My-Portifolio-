@@ -137,7 +137,7 @@ export const projects = [
     description:
       "An interactive analytics dashboard featuring dynamic data visualization, real-time filtering, and insightful performance metrics for informed decision-making.",
     image: "/projects/project2.png",
-    tags: ["JavaScript", "Tailwlind", "React.js"],
+    tags: ["JavaScript", "Tailwind", "React.js"],
     demoUrl: "#",
     githubUrl: "#",
   },
