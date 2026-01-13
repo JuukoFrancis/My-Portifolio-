@@ -4,6 +4,7 @@ import { AboutSkills, clientReviews } from "../assets/assets";
 import React, { useEffect, useState } from "react";
 import { BsChatQuote } from "react-icons/bs";
 import { HiChevronLeft, HiChevronRight, HiStar } from "react-icons/hi";
+import { toast } from "react-toastify";
 
 const AboutMe = () => {
   const [showCard, setShowCard] = useState(0);
@@ -31,6 +32,10 @@ const AboutMe = () => {
       clearInterval(slideInterval);
     };
   }, [showCard]);
+
+  const handleDownload = () => {
+    toast.success("Resume download completed successfully");
+  };
 
   return (
     <>
@@ -74,7 +79,8 @@ const AboutMe = () => {
                 </a>
 
                 <a
-                  href=""
+                  href="Resume_Juuko_Francis.pdf"
+                  download="Juuko_Francis_Backend_Developer_CV.pdf"
                   className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
                 >
                   Download CV
