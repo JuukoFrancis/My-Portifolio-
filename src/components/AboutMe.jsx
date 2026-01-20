@@ -79,7 +79,7 @@ const AboutMe = () => {
                 </a>
 
                 <a
-                  href="Resume_Juuko_Francis.pdf"
+                  href="Resume_referenced_final_1.pdf"
                   download="Juuko_Francis_Backend_Developer_CV.pdf"
                   onClick={handleDownload}
                   className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"

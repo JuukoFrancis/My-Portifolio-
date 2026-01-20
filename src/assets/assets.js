@@ -127,18 +127,18 @@ export const projects = [
     description:
       "A modern and responsive portfolio website designed to showcase products, services, and brand identity with a clean and professional user experience.",
     image: "/projects/bawologoma.png",
-    tags: ["React", "TailwindCSS"],
+    tags: ["React", "TailwindCSS", "Framer Motion", "JavaScript"],
     demoUrl: "https://www.bawologomaelectrocentre.com",
     githubUrl: "#",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "Personal Portfolio Website",
     description:
-      "An interactive analytics dashboard featuring dynamic data visualization, real-time filtering, and insightful performance metrics for informed decision-making.",
-    image: "/projects/project2.png",
-    tags: ["JavaScript", "Tailwind", "React.js"],
-    demoUrl: "#",
+      "A modern, responsive personal portfolio built with React, Tailwind CSS, and Framer Motion, showcasing my projects, skills, and experience with smooth animations, clean UI, and optimized performance.",
+    image: "/projects/Juuko_Francis_Portifolio.png",
+    tags: ["Reactjs", "TailwindCSS", "Framer Motion", "JavaScript"],
+    demoUrl: "https://juuko-francis-portifolio.vercel.app/",
     githubUrl: "#",
   },
   {
@@ -146,10 +146,10 @@ export const projects = [
     title: "Namu PIzza E-commerce Platform",
     description:
       "A full-featured e-commerce platform with secure user authentication, product management, and integrated payment processing for seamless online transactions.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Express"],
-    demoUrl: "#",
-    githubUrl: "#",
+    image: "/projects/Namu_Pizza_Hub.png",
+    tags: ["Reactjs", "JavaScript", "TailwindCSS", "Supabase"],
+    demoUrl: "https://namu-react-pizza.vercel.app/",
+    githubUrl: "https://github.com/JuukoFrancis/NAMU-REACT-PIZZA.git",
   },
 ];
 
