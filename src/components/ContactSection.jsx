@@ -86,7 +86,7 @@ export const ContactSection = () => {
                   <div>
                     <h4 className="font-medium"> {item.title}</h4>
                     <a
-                      href="mailto:juukojuniorfrancis@gmail.com"
+                      href={item.to}
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
                       {item.detail}
@@ -100,7 +100,7 @@ export const ContactSection = () => {
               <h4 className="font-medium mb-4"> Connect With Me</h4>
               <div className="flex space-x-4 justify-center">
                 {contactIcons.map((icon, key) => (
-                  <a href="#" target="_blank" key={key}>
+                  <a href={icon.to} target="_blank" key={key}>
                     {<icon.icon />}
                   </a>
                 ))}
@@ -187,7 +187,7 @@ export const ContactSection = () => {
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
-                  "cosmic-button w-full flex items-center justify-center gap-2"
+                  "cosmic-button w-full flex items-center justify-center gap-2",
                 )}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}

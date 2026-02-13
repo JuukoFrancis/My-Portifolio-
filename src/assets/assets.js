@@ -10,8 +10,12 @@ import {
   Twitter,
   Instagram,
   Twitch,
+  Facebook,
 } from "lucide-react";
+import { BsWhatsapp } from "react-icons/bs";
 import { DiVisualstudio } from "react-icons/di";
+import { FaWhatsapp, FaWhatsappSquare } from "react-icons/fa";
+
 import {
   SiReact,
   SiJavascript,
@@ -28,6 +32,10 @@ import {
   SiGithub,
   SiGit,
   SiFigma,
+  SiPython,
+  SiPhp,
+  SiLaravel,
+  SiWhatsapp,
 } from "react-icons/si";
 
 export const AboutSkills = [
@@ -105,11 +113,14 @@ export const skills = [
   // backend
   { name: "Node.js", icon: SiNodedotjs, level: 80, category: "backend" },
   { name: "Express.js", icon: SiExpress, level: 75, category: "backend" },
-  { name: "Django", icon: SiDjango, level: 65, category: "backend" },
+  { name: "Django", icon: SiDjango, level: 73, category: "backend" },
+  { name: "Python", icon: SiPython, level: 70, category: "backend" },
+  { name: "PHP", icon: SiPhp, level: 68, category: "backend" },
+  { name: "Laravel", icon: SiLaravel, level: 70, category: "backend" },
 
   { name: "MongoDB", icon: SiMongodb, level: 75, category: "backend" },
   { name: "PostgreSQL", icon: SiPostgresql, level: 70, category: "backend" },
-  { name: "MySQL", icon: SiMysql, level: 65, category: "backend" },
+  { name: "MySQL", icon: SiMysql, level: 70, category: "backend" },
 
   { name: "Redux Toolkit", icon: SiRedux, level: 85, category: "tools" },
   { name: "React Query", icon: SiReactquery, level: 85, category: "tools" },
@@ -158,24 +169,36 @@ export const Address = [
     title: "Email",
     detail: "juukojuniorfrancis@gmail.com",
     icon: Mail,
+    to: "mailto:juukojuniorfrancis@gmail.com",
   },
   {
     title: "Phone",
     detail: "+256-756-974-222  ",
     icon: Phone,
+    to: "contact",
   },
   {
     title: "Location",
     detail: "Kampala, Uganda",
     icon: MapPin,
+    to: "contact",
   },
 ];
 
 export const contactIcons = [
-  { icon: Linkedin },
-  { icon: Twitter },
-  { icon: Instagram },
-  { icon: Twitch },
+  {
+    icon: Linkedin,
+    to: "https://www.linkedin.com/in/francis-juuko-7a72bb31b/",
+  },
+  { icon: Twitter, to: "https://x.com/Frank25657" },
+  {
+    icon: Instagram,
+    to: "https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=bn2a3j3",
+  },
+  {
+    icon: SiWhatsapp,
+    to: "https://wa.me/message/ZNG52LUCNVDEM1",
+  },
 ];
 // export const skills = [
 //   // Frontend
